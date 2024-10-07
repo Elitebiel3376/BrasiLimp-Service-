@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasiLimp Service - Produtos</title>
+    <!-- Importando a fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8; /* Cor de fundo da página */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .logo h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .menu-hamburguer {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .nav-menu {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            top: 60px; /* Abaixo do cabeçalho */
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8; /* Cor de fundo do menu */
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-menu.active {
+            display: block; /* Mostra o menu quando ativo */
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .nav-menu ul li a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .product-section {
+            text-align: center; /* Centraliza o conteúdo da seção do produto */
+            margin: 40px 20px; /* Margens em cima e embaixo e laterais */
+            background-color: white; /* Fundo branco para a seção do produto */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para a seção */
+            padding: 20px; /* Espaçamento interno */
+        }
+
+        .product-image {
+            width: 200px; /* Largura da imagem */
+            height: 200px; /* Altura da imagem */
+            border-radius: 15px; /* Bordas arredondadas */
+            object-fit: cover; /* Mantém a proporção da imagem */
+            margin: 20px 0; /* Margem em cima e embaixo */
+        }
+
+        .product-description {
+            font-size: 18px; /* Tamanho da fonte da descrição */
+            color: #333; /* Cor da fonte */
+            margin: 10px 0; /* Margens em cima e embaixo */
+        }
+
+        .contact-button {
+            background-color: #28a745; /* Cor de fundo do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Remove borda */
+            padding: 10px 20px; /* Espaçamento interno do botão */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Muda o cursor ao passar o mouse */
+            font-size: 16px; /* Tamanho da fonte do botão */
+            transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+        }
+
+        .contact-button:hover {
+            background-color: #218838; /* Cor de fundo ao passar o mouse */
+        }
+
+        .product-grid {
+            display: grid; /* Usando grid para layout responsivo */
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajusta o número de colunas */
+            gap: 20px; /* Espaçamento entre os itens */
+            padding: 20px; /* Espaçamento interno da grid */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>BrasiLimp Service</h1>
+        </div>
+        <div class="menu-hamburguer" onclick="toggleMenu()">
+            &#9776; <!-- Ícone do menu hamburguer -->
+        </div>
+    </header>
+    <nav id="nav-menu" class="nav-menu">
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Nossos serviços</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#contato">Fale conosco</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção de Produtos/Serviços -->
+    <div class="product-grid">
+        <!-- Produto 1 -->
+        <div class="product-section">
+            <img src="imagem_produto1.png" alt="Produto 1" class="product-image"> <!-- Substitua 'imagem_produto1.png' pela imagem do produto -->
+            <div class="product-description">
+                Serviço de Limpeza Geral para Residências.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20limpeza%20geral" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="product-section">
+            <img src="imagem_produto2.png" alt="Produto 2" class="product-image"> <!-- Substitua 'imagem_produto2.png' pela imagem do produto -->
+            <div class="product-description">
+                Desinfecção de Ambientes para garantir segurança.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20desinfecção" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="product-section">
+            <img src="imagem_produto3.png" alt="Produto 3" class="product-image"> <!-- Substitua 'imagem_produto3.png' pela imagem do produto -->
+            <div class="product-description">
+                Limpeza de Escritórios com eficiência e organização.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20a%20limpeza%20de%20escritórios" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="product-section">
+            <img src="imagem_produto4.png" alt="Produto 4" class="product-image"> <!-- Substitua 'imagem_produto4.png' pela imagem do produto -->
+            <div class="product-description">
+                Serviços de Manutenção Predial para manter tudo em ordem.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20serviços%20de%20manutenção" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 5 -->
+        <div class="product-section">
+            <img src="imagem_produto5.png" alt="Produto 5" class="product-image"> <!-- Substitua 'imagem_produto5.png' pela imagem do produto -->
+            <div class="product-description">
+                Limpeza Pós-Obra para deixar seu espaço impecável.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20limpeza%20pós-obra" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 6 -->
+        <div class="product-section">
+            <img src="imagem_produto6.png" alt="Produto 6" class="product-image"> <!-- Substitua 'imagem_produto6.png' pela imagem do produto -->
+            <div class="product-description">
+                Limpeza de Carpetes e Estofados com produtos de qualidade.
+            </div>
+            <!-- Produto 6 (continuação) -->
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20limpeza%20de%20carpetes%20e%20estofados" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 7 -->
+        <div class="product-section">
+            <img src="imagem_produto7.png" alt="Produto 7" class="product-image"> <!-- Substitua 'imagem_produto7.png' pela imagem do produto -->
+            <div class="product-description">
+                Serviços de Lavagem de Fachadas para deixar sua empresa bonita.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20lavagem%20de%20fachadas" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 8 -->
+        <div class="product-section">
+            <img src="imagem_produto8.png" alt="Produto 8" class="product-image"> <!-- Substitua 'imagem_produto8.png' pela imagem do produto -->
+            <div class="product-description">
+                Manutenção de Jardins e Áreas Verdes para um ambiente agradável.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20manutenção%20de%20jardins" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 9 -->
+        <div class="product-section">
+            <img src="imagem_produto9.png" alt="Produto 9" class="product-image"> <!-- Substitua 'imagem_produto9.png' pela imagem do produto -->
+            <div class="product-description">
+                Serviços de Limpeza de Piscinas para um lazer seguro e limpo.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20limpeza%20de%20piscinas" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+
+        <!-- Produto 10 -->
+        <div class="product-section">
+            <img src="imagem_produto10.png" alt="Produto 10" class="product-image"> <!-- Substitua 'imagem_produto10.png' pela imagem do produto -->
+            <div class="product-description">
+                Desinfecção de Equipamentos e Superfícies para segurança.
+            </div>
+            <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20desinfecção%20de%20equipamentos" target="_blank">
+                <button class="contact-button">Saiba mais pelo WhatsApp</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active'); // Alterna a classe 'active' para mostrar ou ocultar o menu
+        }
+    </script>
+</body>
+</html>
+          

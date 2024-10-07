@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasiLimp Service</title>
+    <!-- Importando a fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .logo h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .menu-hamburguer {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-menu.active {
+            display: block;
+        }
+
+        .nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .nav-menu ul li a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .hero {
+            height: 400px;
+            background-color: transparent;
+        }
+
+        .service-logo {
+            text-align: center;
+            margin: 20px 0; /* Ajustado para mover a logo mais para cima */
+        }
+
+        .service-logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .service-prompt {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Estilo do Carrossel */
+        .carousel {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .centered-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .rounded-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #333;
+            cursor: pointer;
+        }
+
+        .description-text {
+            text-align: center;
+            margin: 20px;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>BrasiLimp Service</h1>
+        </div>
+        <div class="menu-hamburguer" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </header>
+    <nav id="nav-menu" class="nav-menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Nossos serviços</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da20%BasiLimp">Fale conosco</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção Inicial Simples -->
+    <section class="hero"></section>
+
+    <!-- Logo da Empresa Centralizada -->
+    <div class="service-logo">
+        <img src="logo.png" alt="Logo da BrasiLimp Service">
+    </div>
+
+    <!-- Primeiro Bloco com Carrossel -->
+    <div class="service-prompt">Nossos Serviços</div>
+    <div class="carousel">
+        <div class="carousel-images" id="carouselImages">
+            <img src="imagen1.png" alt="Serviço 1">
+            <img src="imagen2.png" alt="Serviço 2">
+            <img src="imagen3.png" alt="Serviço 3">
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+    <div class="description-text">
+        Oferecemos serviços de limpeza personalizados para atender as necessidades do seu ambiente corporativo.
+    </div>
+
+    <!-- Segundo Bloco com imagem normal -->
+    <div class="service-prompt">Desinfecção</div>
+    <div class="centered-image">
+        <a href="https://wa.me/+5521999363794?text=Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20desinfecção" target="_blank">
+            <img src="imagen2.png" alt="Imagem com bordas arredondadas" class="rounded-img">
+        </a>
+    </div>
+    <div class="description-text">
+        Garantimos a desinfecção completa de ambientes, utilizando os melhores produtos e métodos para proteger sua saúde.
+    </div>
+
+    <!-- Terceiro Bloco com imagem normal -->
+    <div class="service-prompt">Limpeza de Escritórios</div>
+    <div class="centered-image">
+        <a href="https://wa.me/+5521999363794?text=Preciso%20de%20serviço%20de%20limpeza%20para%20escritórios" target="_blank">
+            <img src="imagen3.png" alt="Imagem com bordas arredondadas" class="rounded-img">
+        </a>
+    </div>
+    <div class="description-text">
+        Proporcionamos limpeza eficiente em escritórios, com foco na conservação e organização de espaços corporativos.
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.getElementById('carouselImages');
+            const totalSlides = slides.children.length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
